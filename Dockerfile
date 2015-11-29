@@ -20,6 +20,7 @@ ADD launch.bash /launch
 
 WORKDIR /opt/bb
 VOLUME ["/opt/atlassian-home"]
-EXPOSE 8080
+EXPOSE 7990
+EXPOSE 7999
 USER atlassian
 CMD ["/launch"]
