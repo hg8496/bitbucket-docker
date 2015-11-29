@@ -3,7 +3,7 @@ MAINTAINER hg8496@cstolz.de
 
 ENV BB_VERSION 4.1.0
 
-RUN RUN apt-get update
+RUN apt-get update
 RUN apt-get install git-all
 RUN curl -Lks  https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BB_VERSION}.tar.gz -o /bb.tar.gz
 RUN mkdir -p /opt/bb
