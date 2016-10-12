@@ -3,15 +3,15 @@ MAINTAINER hg8496@cstolz.de
 
 ENV BB_VERSION 4.10.0
 
-RUN apt-get update
-RUN apt-get install git -y
-RUN curl -Lks  https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BB_VERSION}.tar.gz -o /bb.tar.gz
-RUN mkdir -p /opt/bb
-RUN tar zxf /bb.tar.gz --strip=1 -C /opt/bb
-RUN chown -R atlassian:atlassian /opt/bb
-RUN mv /opt/bb/conf/server.xml /opt/bb/conf/server-backup.xml
-RUN apt-get clean 
-RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /bb.tar.gz
+RUN apt-get update \
+  && apt-get install git -y \
+  && curl -Lks  https://www.atlassian.com/software/stash/downloads/binary/atlassian-bitbucket-${BB_VERSION}.tar.gz -o /bb.tar.gz \
+  && mkdir -p /opt/bb \
+  && tar zxf /bb.tar.gz --strip=1 -C /opt/bb \
+  && chown -R atlassian:atlassian /opt/bb \
+  && mv /opt/bb/conf/server.xml /opt/bb/conf/server-backup.xml \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /bb.tar.gz
 
 ENV CONTEXT_PATH ROOT
 ENV DATABASE_URL ""
