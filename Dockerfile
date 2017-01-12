@@ -1,7 +1,7 @@
 FROM hg8496/atlassian-docker
 MAINTAINER hg8496@cstolz.de
 
-ENV BB_VERSION 4.12.0
+ENV BB_VERSION 4.12.1
 
 RUN apt-get update \
   && apt-get install git -y \
@@ -18,7 +18,7 @@ ENV DATABASE_URL ""
 ENV SSL_PROXY ""
 ENV BITBUCKET_HOME /opt/atlassian-home
 
-ADD launch.bash /launch
+COPY launch.bash /launch
 
 WORKDIR /opt/bb
 VOLUME ["/opt/atlassian-home"]
