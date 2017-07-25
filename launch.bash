@@ -14,5 +14,5 @@ jdbc.user=$DB_USER
 jdbc.password=$DB_PASSWORD
 END
 fi
-JAVA_HOME= /usr/lib/jvm/java-8-oracle/
+JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 /opt/bb/bin/start-bitbucket.sh -fg
