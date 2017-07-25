@@ -9,7 +9,6 @@ RUN apt-get update \
   && mkdir -p /opt/bb \
   && tar zxf /bb.tar.gz --strip=1 -C /opt/bb \
   && chown -R atlassian:atlassian /opt/bb \
-  && mv /opt/bb/conf/server.xml /opt/bb/conf/server-backup.xml \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /bb.tar.gz
 
