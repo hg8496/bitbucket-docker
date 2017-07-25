@@ -12,6 +12,8 @@ jdbc.driver=$DB_JDBC_DRIVER
 jdbc.url=$DB_JDBC_URL
 jdbc.user=$DB_USER
 jdbc.password=$DB_PASSWORD
+server.proxy-name=$SSL_PROXY
+server.proxy-port=443
 END
 fi
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
