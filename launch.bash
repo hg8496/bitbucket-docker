@@ -3,8 +3,6 @@ set -o errexit
 . /usr/local/bin/db_extract.sh
 sudo own-volume
 
-/usr/local/bin/setup_server_xml.sh
-
 if [ -n "$DATABASE_URL" ]; then
   extract_database_url "$DATABASE_URL" DB /opt/bb/lib
   DB_JDBC_URL="$(xmlstarlet esc "$DB_JDBC_URL")"
@@ -16,5 +14,5 @@ jdbc.user=$DB_USER
 jdbc.password=$DB_PASSWORD
 END
 fi
-
+JAVA_HOME= /usr/lib/jvm/java-8-oracle/
 /opt/bb/bin/start-bitbucket.sh -fg
