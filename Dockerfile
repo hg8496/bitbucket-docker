@@ -1,7 +1,7 @@
 FROM hg8496/atlassian-docker
 MAINTAINER hg8496@cstolz.de
 
-ENV BB_VERSION 5.0.2
+ENV BB_VERSION 5.2.2
 
 RUN apt-get update \
   && apt-get install git -y \
